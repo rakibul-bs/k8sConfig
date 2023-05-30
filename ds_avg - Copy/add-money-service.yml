@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: add-money-service
+data:
+  ADD_MONEY_BASE_URL: http://10.11.245.11:8443/
+  ADD_MONEY_MTB_CARD_BURL: 172.16.229.213:743
+  ADD_MONEY_MTB_CARD_MERCHANT: '107000000000001'
+  ADD_MONEY_SERVICE_DATASOURCE_PASSWORD: p0cket@ABG
+  ADD_MONEY_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=financial_institute
+  ADD_MONEY_SERVICE_DATASOURCE_USERNAME: pocket_uat
+  ADD_MONEY_SERVICE_PORT: '8901'
+  ADD_MONEY_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  ADD_MONEY_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  ADD_MONEY_SERVICE_REDIS_PORT: '6379'
+  ADD_MONEY_SERVICE_UCB_HEADER_CH: PKT
+  ADD_MONEY_SERVICE_UCB_HEADER_DC: '555'
+  ADD_MONEY_SERVICE_UCB_HEADER_P: '123456'
+  ADD_MONEY_SERVICE_UCB_HEADER_U: UCBPKT
+  ADD_MONEY_SERVICE_UCB_TID: AW
+  ADD_MONEY_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: add-money-service
+  labels:
+    app: add-money-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: add-money-service
+  template:
+    metadata:
+      labels:
+        app: add-money-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: add-money-service
+        envFrom:
+        - configMapRef:
+            name: add-money-service
+        image: 10.96.233.11:8888/pocket/add-money-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8901
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8901
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8901
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: add-money-service-svc
+spec:
+  selector:
+    app: add-money-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8901
+ 

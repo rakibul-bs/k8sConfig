@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transaction-processing-service
+  labels:
+    app: transaction-processing-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transaction-processing-service
+  template:
+    metadata:
+      labels:
+        app: transaction-processing-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: transaction-processing-service
+        image: 10.96.233.11:8888/pocket/transaction-processing-service.jar:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8914

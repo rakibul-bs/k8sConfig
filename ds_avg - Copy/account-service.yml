@@ -1,0 +1,89 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: account-service
+data:
+  ACC_SERVICE_ACCOUNT_IMPL: real
+  ACC_SERVICE_DATASOURCE_PASSWORD: p0cket@ABG
+  ACC_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=account
+  ACC_SERVICE_DATASOURCE_USERNAME: pocket_uat
+  ACC_SERVICE_FLYWAY_PASSWORD: p0cket@ABG
+  ACC_SERVICE_FLYWAY_SCHEMA: account
+  ACC_SERVICE_FLYWAY_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db
+  ACC_SERVICE_FLYWAY_USER: pocket_uat
+  ACC_SERVICE_LOGGING_CONFIG: classpath:log/logback-beta.xml
+  ACC_SERVICE_PORT: '8900'
+  ACC_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  ACC_SERVICE_REDIS_MAX_CONNECTION: '10'
+  ACC_SERVICE_REDIS_MAX_IDLE_CONNECTION: '5'
+  ACC_SERVICE_REDIS_MIN_IDLE_CONNECTION: '0'
+  ACC_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  ACC_SERVICE_REDIS_PORT: '6379'
+  ACC_SERVICE_SLEUTH_SAM_PRO: '1.0'
+  ACC_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-service
+  labels:
+    app: account-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-service
+  template:
+    metadata:
+      labels:
+        app: account-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: account-service
+        envFrom:
+        - configMapRef:
+            name: account-service
+        image: 10.96.233.11:8888/pocket/account-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8900
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8900
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8900
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: account-service-svc
+spec:
+  selector:
+    app: account-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8900
+ 

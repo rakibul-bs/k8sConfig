@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-gateway 
+data:
+  SE_GW_DB_PASS: sheba@123
+  SE_GW_DB_URL: r2dbc:postgresql://10.33.13.12:5432/sheba_wallet_db?currentSchema=gateway
+  SE_GW_DB_USER: shebawallet
+  SE_GW_EUREKA_PORT: '8761'
+  SE_GW_EUREKA_URL: http://eureka-sts-0.eureka.default.svc.cluster.local:8761/eureka
+  SE_GW_JWT_KEY: 327234753778214125442A472D4B6150645367566B59703373367638792F423F
+  SE_GW_PORT: '8000'
+  SE_GW_REDIS_HOST: redis-master.redis.svc.cluster.local
+  SE_GW_REDIS_PASS: Sheba@1234
+  SE_GW_REDIS_PORT: '6379'
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-gateway
+  labels:
+    app: service-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-gateway
+  template:
+    metadata:
+      labels:
+        app: service-gateway
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret
+      containers:
+      - name:  service-gateway
+        envFrom:
+        - configMapRef:
+            name:  service-gateway
+        image: shebapay.azurecr.io/shebapay/gateway-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8000
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8000
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-gateway-svc
+spec:
+  selector:
+    app: service-gateway
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+ 

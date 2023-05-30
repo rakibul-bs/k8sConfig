@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: meta-service
+data:
+  META_REDIS_POOL_MAX_CONNECTION: '30'
+  META_REDIS_POOL_MAX_IDLE_CONNECTION: '2'
+  META_REDIS_POOL_MIN_IDLE_CONNECTION: '0'
+  META_SERVICE_BD_PASSWORD: p0cket@ABG
+  META_SERVICE_BD_USERNAME: pocket_uat
+  META_SERVICE_DB_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=meta
+  META_SERVICE_IMAGE_EXPIRY_SECRET_KEY: __bs@23EE32@sb__
+  META_SERVICE_IMAGE_EXPIRY_SECRET_MINUTE: '1000000'
+  META_SERVICE_LOGBACK_FILE: classpath:log/logback-beta.xml
+  META_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  META_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  META_SERVICE_REDIS_PORT: '6379'
+  META_SERVICE_SERVER_PORT: '8909'
+  META_SERVICE_SLEUTH_SAMPLER_PROBABILITY: '1.0'
+  META_SERVICE_WALLET_GATEWAY_URL: http://10.11.245.11:8000
+  META_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meta-service
+  labels:
+    app: meta-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meta-service
+  template:
+    metadata:
+      labels:
+        app: meta-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: meta-service
+        envFrom:
+        - configMapRef:
+            name: meta-service
+        image: 10.96.233.11:8888/pocket/meta-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8909
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8909
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8909
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: meta-service-svc
+spec:
+  selector:
+    app: meta-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8909
+ 

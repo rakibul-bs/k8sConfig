@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: add-money-service
+data:
+  ADD_MONEY_BASE_URL: https://api.shebapay.xyz
+  ADD_MONEY_MTB_CARD_BURL: 172.16.229.213:743
+  ADD_MONEY_MTB_CARD_MERCHANT: '107000000000001'
+  ADD_MONEY_SERVICE_DATASOURCE_PASSWORD: sheba@123
+  ADD_MONEY_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.33.13.11:5432/sheba_wallet_db?currentSchema=financial_institute
+  ADD_MONEY_SERVICE_DATASOURCE_USERNAME: shebawallet
+  ADD_MONEY_SERVICE_PORT: '8901'
+  ADD_MONEY_SERVICE_REDIS_HOST: redis-master.redis.svc.cluster.local
+  ADD_MONEY_SERVICE_REDIS_PASSWORD: Sheba@1234
+  ADD_MONEY_SERVICE_REDIS_PORT: '6379'
+  ADD_MONEY_SERVICE_UCB_HEADER_CH: PKT
+  ADD_MONEY_SERVICE_UCB_HEADER_DC: '555'
+  ADD_MONEY_SERVICE_UCB_HEADER_P: '123456'
+  ADD_MONEY_SERVICE_UCB_HEADER_U: UCBPKT
+  ADD_MONEY_SERVICE_UCB_TID: AW
+  ADD_MONEY_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.cluster.local:8761/eureka
+  ADD_LOGGING_CONFIG: classpath:log/logback-uat.xml
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: add-money-service
+  labels:
+    app: add-money-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: add-money-service
+  template:
+    metadata:
+      labels:
+        app: add-money-service
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret
+      containers:
+      - name: add-money-service
+        envFrom:
+        - configMapRef:
+            name: add-money-service
+        image: shebapay.azurecr.io/shebapay/add-money-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8901
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8901
+          initialDelaySeconds: 240
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8901
+          initialDelaySeconds: 240
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: add-money-service-svc
+spec:
+  selector:
+    app: add-money-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8901
+ 

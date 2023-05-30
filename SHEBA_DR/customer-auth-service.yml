@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customer-auth-service
+  namespace: mz
+data:
+  CUSTOMER_AUTH_API_KEY: AQAAAAABAADGtfyRpJ_xYV42SRAuXgyr
+  CUSTOMER_AUTH_CHAT_URL: ws://10.11.245.11:6060/v0/channels
+  CUSTOMER_AUTH_FEIGN_CLIENT_CONNECTION_READTIMEOUT: '60000'
+  CUSTOMER_AUTH_FEIGN_CLIENT_CONNECTION_TIMEOUT: '120000'
+  CUSTOMER_AUTH_FEIGN_HTTPCLIENT_CONNECTION_PER_ROUTE: '200'
+  CUSTOMER_AUTH_FEIGN_HTTPCLIENT_MAX_CONNECTION: '200'
+  CUSTOMER_AUTH_IMAGE_SECRET_KEY: bs@2#I
+  CUSTOMER_AUTH_JWT_TOKEN_EXPIRY_MINUTE: '30'
+  CUSTOMER_AUTH_JWT_TOKEN_SECRET_KEY: 327234753778214125442A472D4B6150645367566B59703373367638792F423F
+  CUSTOMER_AUTH_PASSWORD_STRENTH: '11'
+  CUSTOMER_AUTH_REDIS_POOL_MAX_CONNECTION: '30'
+  CUSTOMER_AUTH_REDIS_POOL_MAX_IDLE_CONNECTION: '10'
+  CUSTOMER_AUTH_REDIS_POOL_MIN_IDLE_CONNECTION: '0'
+  CUSTOMER_AUTH_SERVER_PORT: '5080'
+  CUSTOMER_AUTH_SERVICE_DB_PASSWORD: sheba@123
+  CUSTOMER_AUTH_SERVICE_DB_USERNAME: shebawallet
+  CUSTOMER_AUTH_SERVICE_DB_URL: jdbc:postgresql://10.34.13.11:5432/sheba_wallet_db?currentSchema=customer
+  CUSTOMER_AUTH_SERVICE_LOGBACK_FILE: classpath:log/logback-uat.xml
+  CUSTOMER_AUTH_SERVICE_REDIS_HOST: redis-master.redis.svc.cluster.local
+  CUSTOMER_AUTH_SERVICE_REDIS_PASSWORD: Sheba@1234
+  CUSTOMER_AUTH_SERVICE_REDIS_PORT: '6379'
+  CUSTOMER_AUTH_SERVICE_SLEUTH_SAMPLER_PROBABILITY: '1.0'
+  CUSTOMER_AUTH_SERVICE_ZONE: http://eureka-sts-0.eureka.dmz.svc.cluster.local:8761/eureka,http://eureka-sts-1.eureka.dmz.svc.cluster.local:8761/eureka,http://eureka-sts-2.eureka.dmz.svc.cluster.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-auth-service
+  namespace: mz
+  labels:
+    app: customer-auth-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-auth-service
+  template:
+    metadata:
+      labels:
+        app: customer-auth-service
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret-mz
+      containers:
+      - name: customer-auth-service
+        envFrom:
+        - configMapRef:
+            name: customer-auth-service
+        image: shebapay.azurecr.io/shebapay/customer-auth-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5080
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 5080
+          initialDelaySeconds: 180
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 5080
+          initialDelaySeconds: 180
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-auth-service-svc
+  namespace: mz
+spec:
+  selector:
+    app: customer-auth-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 5080
+ 

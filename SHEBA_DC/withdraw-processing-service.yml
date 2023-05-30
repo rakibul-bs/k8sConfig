@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: withdraw-processing-service
+  labels:
+    app: withdraw-processing-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: withdraw-processing-service
+  template:
+    metadata:
+      labels:
+        app: withdraw-processing-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: withdraw-processing-service
+        image: 10.96.233.11:8888/pocket/withdraw-processing-service.jar:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8915

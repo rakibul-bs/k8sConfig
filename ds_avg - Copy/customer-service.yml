@@ -1,0 +1,103 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customer-service 
+data:
+  CUSTOMER_SERVICE_SERVER_PORT: '8913'
+  CUSTOMER_SERVICE_ZONE:  http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+  CUSTOMER_SERVICE_DB_URL : jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=customer
+  CUSTOMER_SERVICE_BD_USERNAME : pocket_uat
+  CUSTOMER_SERVICE_BD_PASSWORD : p0cket@ABG
+  CUSTOMER_SERVICE_REDIS_HOST : redis-1678904797-master.redis.svc.uat.pocket.local
+  CUSTOMER_SERVICE_REDIS_PORT : '6379'
+  CUSTOMER_SERVICE_REDIS_PASSWORD : p0cket@ABG
+  CUSTOMER_REDIS_POOL_MAX_CONNECTION : '30'
+  CUSTOMER_REDIS_POOL_MAX_IDLE_CONNECTION : '10'
+  CUSTOMER_REDIS_POOL_MIN_IDLE_CONNECTION : '0'
+  CUSTOMER_SERVICE_PASSWORD_STRENTH : '4'
+  CUSTOMER_SERVICE_JWT_TOKEN_PREFIX : Bearer
+  CUSTOMER_SERVICE_JWT_TOKEN_EXPIRY_MINUTE : '30'
+  CUSTOMER_SERVICE_JWT_TOKEN_SECRET_KEY : 327234753778214125442A472D4B6150645367566B59703373367638792F423F
+  CUSTOMER_SERVICE_JWT_TOKEN_IMAGE_SECRET_KEY : bs@2#I
+  CUSTOMER_SERVICE_LOGBACK_FILE : classpath:log/logback-beta.xml
+  CUSTOMER_SERVICE_IMAGE_EXPIRY_SECRET_KEY : __bs@23EE32@sb__
+  CUSTOMER_SERVICE_IMAGE_EXPIRY_SECRET_MINUTE : '2'
+  CUSTOMER_SERVICE_INSTANT_NOTIFICATION_EXPIRY_MINUTE : '10'
+  CUSTOMER_SERVICE_WALLET_GATEWAY_URL : http://test-api.abgpocket.com
+  CUSTOMER_SERVICE_PASSWORD_lENGTH : '4'
+  CUSTOMER_SERVICE_CONSECUTIVE_DIGIT : '012345678900001111222233334444555566667777888889999000'
+  CUSTOMER_SERVICE_PASSWORD_VALIDITY_MINUTE : '30'
+  CUSTOMER_SERVICE_FEIGN_HTTPCLIENT_MAX_CONNECTION : '200'
+  CUSTOMER_SERVICE_FEIGN_HTTPCLIENT_CONNECTION_PER_ROUTE : '200'
+  CUSTOMER_SERVICE_FEIGN_CLIENT_CONNECTION_TIMEOUT : '120000'
+  CUSTOMER_SERVICE_FEIGN_CLIENT_CONNECTION_READTIMEOUT : '60000'
+  CUSTOMER_SERVICE_SFTP_HOST : '172.16.229.132'
+  CUSTOMER_SERVICE_SFTP_PORT : '22'
+  CUSTOMER_SERVICE_SFTP_USERNAME : user
+  CUSTOMER_SERVICE_SFTP_PASSWORD : BS-iBank@23#
+  CUSTOMER_SERVICE_SFTP_REMOTE_DIRECTORY : /app/unet/retail/temp
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-service
+  labels:
+    app: customer-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-service
+  template:
+    metadata:
+      labels:
+        app: customer-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name:  customer-service
+        envFrom:
+        - configMapRef:
+            name: customer-service
+        image: 10.96.233.11:8888/pocket/customer-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8913
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8913
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8913
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service-svc
+spec:
+  selector:
+    app: customer-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8913
+ 

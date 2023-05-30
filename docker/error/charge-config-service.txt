@@ -1,0 +1,378 @@
+11:33:13,877 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@2e1d27ba - URL [jar:file:/charge-config-service.jar!/BOOT-INF/classes!/log/logback-beta.xml] is not of type file
+11:33:13,918 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@61d6015a - Adding [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/base.xml] to configuration watch list.
+11:33:13,918 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@2e1d27ba - URL [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/base.xml] is not of type file
+11:33:13,919 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@61d6015a - Adding [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/defaults.xml] to configuration watch list.
+11:33:13,919 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@2e1d27ba - URL [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/defaults.xml] is not of type file
+11:33:13,922 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+11:33:13,922 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+11:33:13,922 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+11:33:13,923 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@61d6015a - Adding [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/console-appender.xml] to configuration watch list.
+11:33:13,923 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@2e1d27ba - URL [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/console-appender.xml] is not of type file
+11:33:13,925 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@61d6015a - Adding [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/file-appender.xml] to configuration watch list.
+11:33:13,925 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@2e1d27ba - URL [jar:file:/charge-config-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/file-appender.xml] is not of type file
+11:33:13,928 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+11:33:13,928 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+11:33:13,928 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+11:33:13,958 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to ERROR
+11:33:13,958 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+11:33:13,958 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.util.LifecycleBase] to ERROR
+11:33:13,958 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.coyote.http11.Http11NioProtocol] to WARN
+11:33:13,959 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.sshd.common.util.SecurityUtils] to WARN
+11:33:13,959 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.tomcat.util.net.NioSelectorPool] to WARN
+11:33:13,959 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to ERROR
+11:33:13,959 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator.internal.util.Version] to WARN
+11:33:13,959 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.actuate.endpoint.jmx] to WARN
+11:33:13,959 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+11:33:13,959 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [CONSOLE]
+11:33:13,959 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:33:13,962 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:33:13,974 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [FILE]
+11:33:13,974 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:33:13,976 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:33:13,981 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1380806038 - setting totalSizeCap to 0 Bytes
+11:33:13,983 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1380806038 - Archive files will be limited to [10 MB] each.
+11:33:13,984 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1380806038 - Will use gz compression
+11:33:13,985 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1380806038 - Will use the pattern /tmp/spring.log.%d{yyyy-MM-dd}.%i for the active file
+11:33:14,008 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@152aa092 - The date pattern is 'yyyy-MM-dd' from file name pattern '/tmp/spring.log.%d{yyyy-MM-dd}.%i.gz'.
+11:33:14,008 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@152aa092 - Roll-over at midnight.
+11:33:14,013 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@152aa092 - Setting initial period to Fri Mar 31 11:33:14 UTC 2023
+11:33:14,017 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Active log file name: /tmp/spring.log
+11:33:14,017 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - File property is set to [/tmp/spring.log]
+11:33:14,018 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+11:33:14,018 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating INFO level on Logger[ROOT] onto the JUL framework
+11:33:14,018 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[ROOT]
+11:33:14,018 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+11:33:14,018 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [STDOUT_CONSOLE_APPENDER] not referenced. Skipping further processing.
+11:33:14,018 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [TRACE_FILE_APPENDER]
+11:33:14,018 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:33:14,021 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1151844284 - Will use gz compression
+11:33:14,021 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1151844284 - Will use the pattern ./logs/beta/trace/archive/charge-config/charge-config-service-trace-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:33:14,022 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4ef37659 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/trace/archive/charge-config/charge-config-service-trace-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:33:14,022 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4ef37659 - Roll-over at the top of every hour.
+11:33:14,022 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4ef37659 - Setting initial period to Fri Mar 31 11:33:14 UTC 2023
+11:33:14,022 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4ef37659 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:33:14,022 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4ef37659 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:33:14,022 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[TRACE_FILE_APPENDER] - Active log file name: ./logs/beta/trace/charge-config-service-trace.log
+11:33:14,022 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[TRACE_FILE_APPENDER] - File property is set to [./logs/beta/trace/charge-config-service-trace.log]
+11:33:14,022 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [INTEGRATION_TRACE_FILE_APPENDER]
+11:33:14,022 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:33:14,023 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@2003534796 - Will use gz compression
+11:33:14,024 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@2003534796 - Will use the pattern ./logs/beta/integration/archive/charge-config/charge-config-service-integration-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:33:14,024 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@37858383 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/integration/archive/charge-config/charge-config-service-integration-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:33:14,024 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@37858383 - Roll-over at the top of every hour.
+11:33:14,024 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@37858383 - Setting initial period to Fri Mar 31 11:33:14 UTC 2023
+11:33:14,024 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@37858383 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:33:14,024 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@37858383 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:33:14,025 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_TRACE_FILE_APPENDER] - Active log file name: ./logs/beta/integration/charge-config-service-integration.log
+11:33:14,025 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_TRACE_FILE_APPENDER] - File property is set to [./logs/beta/integration/charge-config-service-integration.log]
+11:33:14,025 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [INTEGRATION_PERFORMANCE_FILE_APPENDER]
+11:33:14,025 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:33:14,026 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1311146128 - Will use gz compression
+11:33:14,026 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1311146128 - Will use the pattern ./logs/beta/integration/archive/charge-config/charge-config-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:33:14,026 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1bb266b3 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/integration/archive/charge-config/charge-config-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:33:14,026 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1bb266b3 - Roll-over at the top of every hour.
+11:33:14,026 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1bb266b3 - Setting initial period to Fri Mar 31 11:33:14 UTC 2023
+11:33:14,026 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1bb266b3 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:33:14,026 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1bb266b3 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:33:14,027 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_PERFORMANCE_FILE_APPENDER] - Active log file name: ./logs/beta/integration/charge-config-service-performance.log
+11:33:14,027 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_PERFORMANCE_FILE_APPENDER] - File property is set to [./logs/beta/integration/charge-config-service-performance.log]
+11:33:14,027 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [ERROR_FILE_APPENDER]
+11:33:14,027 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:33:14,028 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@812446698 - Will use gz compression
+11:33:14,028 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@812446698 - Will use the pattern ./logs/beta/error/archive/charge-config/charge-config-service-error-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:33:14,028 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2beee7ff - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/error/archive/charge-config/charge-config-service-error-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:33:14,028 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2beee7ff - Roll-over at the top of every hour.
+11:33:14,028 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2beee7ff - Setting initial period to Fri Mar 31 11:33:14 UTC 2023
+11:33:14,028 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2beee7ff - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:33:14,028 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2beee7ff - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:33:14,029 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[ERROR_FILE_APPENDER] - Active log file name: ./logs/beta/error/charge-config-service-error.log
+11:33:14,029 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[ERROR_FILE_APPENDER] - File property is set to [./logs/beta/error/charge-config-service-error.log]
+11:33:14,029 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [PERFORMANCE_FILE_APPENDER]
+11:33:14,029 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:33:14,030 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1362546706 - Will use gz compression
+11:33:14,030 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1362546706 - Will use the pattern ./logs/beta/performance/archive/charge-config/charge-config-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:33:14,030 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5939a379 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/performance/archive/charge-config/charge-config-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:33:14,030 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5939a379 - Roll-over at the top of every hour.
+11:33:14,030 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5939a379 - Setting initial period to Fri Mar 31 11:33:14 UTC 2023
+11:33:14,030 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5939a379 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:33:14,030 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5939a379 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:33:14,030 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[PERFORMANCE_FILE_APPENDER] - Active log file name: ./logs/beta/performance/charge-config-service-performance.log
+11:33:14,030 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[PERFORMANCE_FILE_APPENDER] - File property is set to [./logs/beta/performance/charge-config-service-performance.log]
+11:33:14,031 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [errorLogger] to ERROR
+11:33:14,031 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating ERROR level on Logger[errorLogger] onto the JUL framework
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [errorLogger] to false
+11:33:14,032 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [ERROR_FILE_APPENDER] to Logger[errorLogger]
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [traceLogger] to TRACE
+11:33:14,032 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating TRACE level on Logger[traceLogger] onto the JUL framework
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [traceLogger] to false
+11:33:14,032 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [TRACE_FILE_APPENDER] to Logger[traceLogger]
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [performanceLogger] to TRACE
+11:33:14,032 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating TRACE level on Logger[performanceLogger] onto the JUL framework
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [performanceLogger] to false
+11:33:14,032 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [PERFORMANCE_FILE_APPENDER] to Logger[performanceLogger]
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [integrationTraceLogger] to TRACE
+11:33:14,032 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating TRACE level on Logger[integrationTraceLogger] onto the JUL framework
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [integrationTraceLogger] to false
+11:33:14,032 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [INTEGRATION_TRACE_FILE_APPENDER] to Logger[integrationTraceLogger]
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [integrationPerformanceLogger] to TRACE
+11:33:14,032 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@2525ff7e - Propagating TRACE level on Logger[integrationPerformanceLogger] onto the JUL framework
+11:33:14,032 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [integrationPerformanceLogger] to false
+11:33:14,032 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [INTEGRATION_PERFORMANCE_FILE_APPENDER] to Logger[integrationPerformanceLogger]
+11:33:14,033 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@e1de817 - End of configuration.
+11:33:14,033 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@52102734 - Registering current configuration as safe fallback point
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.1)
+
+2023-03-31T11:33:14.107Z  INFO 1 --- [           main] c.b.c.c.ChargeConfigServiceApplication   : Starting ChargeConfigServiceApplication v1.0 using Java 17.0.2 with PID 1 (/charge-config-service.jar started by root in /)
+2023-03-31T11:33:14.109Z  INFO 1 --- [           main] c.b.c.c.ChargeConfigServiceApplication   : The following 1 profile is active: "beta"
+2023-03-31T11:33:14.899Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-31T11:33:14.900Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-31T11:33:14.918Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-03-31T11:33:15.241Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-31T11:33:15.242Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-31T11:33:15.388Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.ChargeAndFeeConfigurationRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.390Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.MessageRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.392Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.NoGroupFeatureCodeRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.394Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.RequestGroupFeatureCodeRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.396Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionAmountChargeSlabRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.398Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionCategoryRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.400Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionConfigRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.401Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionConfigSelectorRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.403Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionDailyUsageLogRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.405Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionFeatureRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.407Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionMonthlyChargeSlabRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.409Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.TransactionMonthlyUsageLogRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.411Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.redis.UserGroupRepositoryRedis; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-03-31T11:33:15.460Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 215 ms. Found 16 JPA repository interfaces.
+2023-03-31T11:33:15.468Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-31T11:33:15.468Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-31T11:33:15.475Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.ApplicationSettingsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.475Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.billPayment.BillerCategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.475Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.billPayment.BillerFeatureRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.476Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.ChargeAndFeeConfigurationRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.476Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.group.UserGroupRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.476Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.LocaleMessageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.476Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.NoGroupFeatureCodeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.479Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.RequestGroupFeatureCodeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.479Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.transaction.TransactionAmountChargeSlabRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.480Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.transaction.TransactionCategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.480Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.transaction.TransactionConfigRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.480Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.transaction.TransactionConfigSelectorRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.480Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.transaction.TransactionFeatureRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.480Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.transaction.TransactionMonthlyChargeSlabRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.481Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.TransactionDailyUsageLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.481Z  INFO 1 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.brainstation23.charge.config.repository.TransactionMonthlyUsageLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-31T11:33:15.493Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 13 Redis repository interfaces.
+2023-03-31T11:33:15.804Z  INFO 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e22bb151-8d37-3c71-87de-6fa45c09e5de
+2023-03-31T11:33:15.884Z  INFO 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'com.brainstation23.charge.config.rest.client.CustomerFeignClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-31T11:33:15.885Z  INFO 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'com.brainstation23.charge.config.rest.client.FeignPaymentClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-31T11:33:16.317Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-31T11:33:16.358Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-03-31T11:33:16.561Z  WARN 1 --- [           main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-03-31T11:33:16.671Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-31T11:33:16.847Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d0753c9
+2023-03-31T11:33:16.850Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-31T11:33:16.871Z  INFO 1 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-03-31T11:33:18.145Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-31T11:33:18.153Z  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-31T11:33:19.209Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8000 (http)
+2023-03-31T11:33:19.218Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-31T11:33:19.218Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-03-31T11:33:19.258Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-31T11:33:19.258Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5095 ms
+2023-03-31T11:33:20.220Z  INFO 1 --- [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'PAYMENT-SERVICE' URL not provided. Will try picking an instance via load-balancing.
+2023-03-31T11:33:20.527Z  INFO 1 --- [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'CUSTOMER-SERVICE' URL not provided. Will try picking an instance via load-balancing.
+2023-03-31T11:33:21.931Z  INFO 1 --- [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-03-31T11:33:21.996Z  WARN 1 --- [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-03-31T11:33:22.012Z  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-03-31T11:33:22.105Z  INFO 1 --- [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-03-31T11:33:22.175Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-03-31T11:33:22.180Z  INFO 1 --- [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-03-31T11:33:22.202Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-03-31T11:33:22.202Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-03-31T11:33:22.202Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-03-31T11:33:22.203Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-03-31T11:33:22.203Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-03-31T11:33:22.203Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-03-31T11:33:22.203Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-03-31T11:33:22.584Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-03-31T11:33:22.587Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2023-03-31T11:33:22.589Z  INFO 1 --- [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-03-31T11:33:22.593Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1680262402593 with initial instances count: 31
+2023-03-31T11:33:22.599Z  INFO 1 --- [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CHARGE-CONFIG-SERVICE with eureka with status UP
+2023-03-31T11:33:22.600Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1680262402600, current=UP, previous=STARTING]
+2023-03-31T11:33:22.601Z  INFO 1 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CHARGE-CONFIG-SERVICE/charge-config-service:2ab3926bbd76988d59c32cd7218fdef4: registering service...
+2023-03-31T11:33:22.632Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8000 (http) with context path ''
+2023-03-31T11:33:22.632Z  INFO 1 --- [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8000
+2023-03-31T11:33:22.655Z  INFO 1 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CHARGE-CONFIG-SERVICE/charge-config-service:2ab3926bbd76988d59c32cd7218fdef4 - registration status: 204
+2023-03-31T11:33:22.680Z  INFO 1 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka-1678905931.default.svc.uat.pocket.local]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-wallet-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = wallet
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-03-31T11:33:22.701Z  INFO 1 --- [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-03-31T11:33:22.701Z  INFO 1 --- [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-03-31T11:33:22.701Z  INFO 1 --- [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-03-31T11:33:22.702Z  INFO 1 --- [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-wallet-1 unregistered
+2023-03-31T11:33:22.703Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'
+2023-03-31T11:33:22.825Z  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-31T11:33:22.826Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-31T11:33:22.828Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-31T11:33:22.828Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-03-31T11:33:25.829Z  WARN 1 --- [scoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2023-03-31T11:33:25.830Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-03-31T11:33:25.833Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CHARGE-CONFIG-SERVICE/charge-config-service:2ab3926bbd76988d59c32cd7218fdef4 - deregister  status: 200
+2023-03-31T11:33:25.838Z  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-03-31T11:33:25.840Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-31T11:33:25.857Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-03-31T11:33:25.869Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at com.brainstation23.charge.config.ChargeConfigServiceApplication.main(ChargeConfigServiceApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:95)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:830)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:666)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createRawConsumer(DefaultKafkaConsumerFactory.java:483)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:451)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumerWithAdjustedProperties(DefaultKafkaConsumerFactory.java:427)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createKafkaConsumer(DefaultKafkaConsumerFactory.java:394)
+	at org.springframework.kafka.core.DefaultKafkaConsumerFactory.createConsumer(DefaultKafkaConsumerFactory.java:371)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.<init>(KafkaMessageListenerContainer.java:846)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer.doStart(KafkaMessageListenerContainer.java:379)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:531)
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:226)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:531)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:383)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:328)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 21 common frames omitted
+Caused by: org.apache.kafka.common.config.ConfigException: Invalid url in bootstrap.servers: kafka-1678905931.default.svc.uat.pocket.local
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:59)
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:48)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.<init>(KafkaConsumer.java:732)
+	... 35 common frames omitted
+

@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bank-service
+data:
+  BANK_SERVICE_BD_PASSWORD: p0cket@ABG
+  BANK_SERVICE_BD_USERNAME: pocket_uat
+  BANK_SERVICE_DB_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=financial_institute
+  BANK_SERVICE_LOGBACK_FILE: classpath:log/logback-beta.xml
+  BANK_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  BANK_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  BANK_SERVICE_REDIS_PORT: '6379'
+  BANK_SERVICE_SERVER_PORT: '8903'
+  BANK_SERVICE_SLEUTH_SAMPLER_PROBABILITY: '1.0'
+  BANK_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+  REDIS_POOL_MAX_CONNECTION: '30'
+  REDIS_POOL_MAX_IDLE_CONNECTION: '10'
+  REDIS_POOL_MIN_IDLE_CONNECTION: '0'
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-service
+  labels:
+    app: bank-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bank-service
+  template:
+    metadata:
+      labels:
+        app: bank-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: bank-service
+        envFrom:
+        - configMapRef:
+            name: bank-service
+        image: 10.96.233.11:8888/pocket/bank-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8903
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8903
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8903
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bank-service-svc
+spec:
+  selector:
+    app: bank-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8903
+ 

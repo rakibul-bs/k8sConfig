@@ -1,0 +1,99 @@
+
+docker build -t 10.11.245.16:8888/pocket/account-service:1.0/pocket/account-service:1.0 .
+docker push 10.11.245.16:8888/pocket/account-service:1.0/pocket/account-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/bank-service:1.0 .
+docker push 10.11.245.16:8888/pocket/bank-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/charge-config-service:1.0 .
+docker push 10.11.245.16:8888/pocket/charge-config-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/admin-gateway-service:1.0 .
+docker push 10.11.245.16:8888/pocket/admin-gateway-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/gateway-service:1.0 .
+docker push 10.11.245.16:8888/pocket/gateway-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/meta-service:1.0 .
+docker push 10.11.245.16:8888/pocket/meta-service:1.0docker 
+
+
+
+docker build -t 10.11.245.16:8888/pocket/discovery-service:1.0 .
+docker push 10.11.245.16:8888/pocket/discovery-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/customer-auth-service:1.0 .
+docker push 10.11.245.16:8888/pocket/customer-auth-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/add-money-service:1.0 .
+docker push 10.11.245.16:8888/pocket/add-money-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/admin-service:1.0 .
+docker push 10.11.245.16:8888/pocket/admin-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/core-service:1.0 .
+docker push 10.11.245.16:8888/pocket/core-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/merchant-auth-service:1.0 .
+docker push 10.11.245.16:8888/pocket/merchant-auth-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/file-server-service:1.0 .
+docker push 10.11.245.16:8888/pocket/file-server-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/notification-service:1.0 .
+docker push 10.11.245.16:8888/pocket/notification-service:1.0
+
+docker build -t 10.11.245.16:8888/pocket/payment-service:1.0 .
+docker push 10.11.245.16:8888/pocket/payment-service:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/customer-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/customer-service.jar:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/merchant-bulk-disbursement-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/merchant-bulk-disbursement-service.jar:1.0
+
+docker build -t 10.11.245.16:8888/pocket/merchant-charge-config-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/merchant-charge-config-service.jar:1.0
+
+
+
+docker build -t 10.11.245.16:8888/pocket/merchant-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/merchant-service.jar:1.0
+
+
+docker build -t 10.11.245.16:8888/pocket/send-money-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/send-money-service.jar:1.0
+
+docker build -t 10.11.245.16:8888/pocket/twofactor-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/twofactor-service.jar:1.0
+
+docker build -t 10.11.245.16:8888/pocket/send-money-to-bank-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/send-money-to-bank-service.jar:1.0
+
+docker build -t 10.11.245.16:8888/pocket/transaction-processing-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/transaction-processing-service.jar:1.0
+
+docker build -t 10.11.245.16:8888/pocket/withdraw-processing-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/withdraw-processing-service.jar:1.0
+
+docker build -t 10.11.245.16:8888/pocket/send-money-to-bank-transaction-processing-service.jar:1.0 .
+docker push 10.11.245.16:8888/pocket/send-money-to-bank-transaction-processing-service.jar:1.0
+
+
+
+
+
+
+
+
+FROM openjdk:17
+COPY target/*.jar account-service.jar
+ENTRYPOINT ["java", "-jar", "account-service.jar"]

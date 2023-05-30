@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: merchant-auth-service 
+data:
+  MERCHANT_AUTH_SERVER_PORT : '8914'
+  MERCHANT_AUTH_SERVICE_ZONE : http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+  MERCHANT_AUTH_SERVICE_SLEUTH_SAMPLER_PROBABILITY : '1.0'
+  MERCHANT_AUTH_SERVICE_DB_URL : jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=merchant
+  MERCHANT_AUTH_SERVICE_DB_USERNAME : pocket_uat
+  MERCHANT_AUTH_SERVICE_DB_PASSWORD : p0cket@ABG
+  MERCHANT_AUTH_SERVICE_REDIS_HOST : redis-1678904797-master.redis.svc.uat.pocket.local
+  MERCHANT_AUTH_SERVICE_REDIS_PORT : '6379'
+  MERCHANT_AUTH_SERVICE_REDIS_PASSWORD : p0cket@ABG
+  MERCHANT_AUTH_REDIS_POOL_MAX_CONNECTION : '30'
+  MERCHANT_AUTH_REDIS_POOL_MAX_IDLE_CONNECTION : '10'
+  MERCHANT_AUTH_REDIS_POOL_MIN_IDLE_CONNECTION : '0'
+  MERCHANT_AUTH_JWT_TOKEN_EXPIRY_MINUTE : '30'
+  MERCHANT_AUTH_JWT_TOKEN_SECRET_KEY : 327234753778214125442A472D4B6150645367566B59703373367638792F423F
+  MERCHANT_AUTH_IMAGE_SECRET_KEY : bs@2#I
+  MERCHANT_AUTH_PASSWORD_STRENTH : '11'
+  MERCHANT_AUTH_FEIGN_HTTPCLIENT_MAX_CONNECTION : '200'
+  MERCHANT_AUTH_FEIGN_HTTPCLIENT_CONNECTION_PER_ROUTE : '200'
+  MERCHANT_AUTH_FEIGN_CLIENT_CONNECTION_TIMEOUT : '120000'
+  MERCHANT_AUTH_FEIGN_CLIENT_CONNECTION_READTIMEOUT : '60000'
+  MERCHANT_AUTH_CHAT_URL : ws://10.11.245.11:6060/v0/channels
+  MERCHANT_AUTH_API_KEY : AQAAAAABAADGtfyRpJ_xYV42SRAuXgyr
+  MERCHANT_AUTH_OTP_EXPIRY_MINUTE : '2'
+  MERCHANT_AUTH_SERVICE_LOGBACK_FILE : classpath:log/logback-beta.xml
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: merchant-auth-service
+  labels:
+    app: merchant-auth-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: merchant-auth-service
+  template:
+    metadata:
+      labels:
+        app: merchant-auth-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name:  merchant-auth-service
+        envFrom:
+        - configMapRef:
+            name:  merchant-auth-service
+        image: 10.96.233.11:8888/pocket/merchant-auth-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8914
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8914
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8914
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: merchant-auth-service-svc
+spec:
+  selector:
+    app: merchant-auth-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8914
+ 

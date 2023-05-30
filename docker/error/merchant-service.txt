@@ -1,0 +1,140 @@
+11:40:20,858 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@140c9f39 - URL [jar:file:/merchant-service.jar!/BOOT-INF/classes!/log/logback-beta.xml] is not of type file
+11:40:20,901 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@4d910fd6 - Adding [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/base.xml] to configuration watch list.
+11:40:20,901 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@140c9f39 - URL [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/base.xml] is not of type file
+11:40:20,903 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@4d910fd6 - Adding [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/defaults.xml] to configuration watch list.
+11:40:20,903 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@140c9f39 - URL [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/defaults.xml] is not of type file
+11:40:20,905 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+11:40:20,905 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+11:40:20,905 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+11:40:20,907 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@4d910fd6 - Adding [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/console-appender.xml] to configuration watch list.
+11:40:20,907 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@140c9f39 - URL [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/console-appender.xml] is not of type file
+11:40:20,909 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@4d910fd6 - Adding [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/file-appender.xml] to configuration watch list.
+11:40:20,909 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@140c9f39 - URL [jar:file:/merchant-service.jar!/BOOT-INF/lib/spring-boot-3.0.1.jar!/org/springframework/boot/logging/logback/file-appender.xml] is not of type file
+11:40:20,912 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+11:40:20,912 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+11:40:20,912 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to ERROR
+11:40:20,946 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.util.LifecycleBase] to ERROR
+11:40:20,946 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.coyote.http11.Http11NioProtocol] to WARN
+11:40:20,946 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.sshd.common.util.SecurityUtils] to WARN
+11:40:20,946 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.tomcat.util.net.NioSelectorPool] to WARN
+11:40:20,946 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to ERROR
+11:40:20,946 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+11:40:20,946 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator.internal.util.Version] to WARN
+11:40:20,947 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+11:40:20,947 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.actuate.endpoint.jmx] to WARN
+11:40:20,947 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+11:40:20,947 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [CONSOLE]
+11:40:20,947 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:40:20,950 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:40:20,965 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [FILE]
+11:40:20,965 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:40:20,968 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:40:20,972 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@124323713 - setting totalSizeCap to 0 Bytes
+11:40:20,974 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@124323713 - Archive files will be limited to [10 MB] each.
+11:40:20,975 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@124323713 - Will use gz compression
+11:40:20,977 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@124323713 - Will use the pattern /tmp/spring.log.%d{yyyy-MM-dd}.%i for the active file
+11:40:21,000 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@77eca502 - The date pattern is 'yyyy-MM-dd' from file name pattern '/tmp/spring.log.%d{yyyy-MM-dd}.%i.gz'.
+11:40:21,000 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@77eca502 - Roll-over at midnight.
+11:40:21,005 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@77eca502 - Setting initial period to Fri Mar 31 11:40:21 UTC 2023
+11:40:21,009 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Active log file name: /tmp/spring.log
+11:40:21,009 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - File property is set to [/tmp/spring.log]
+11:40:21,010 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+11:40:21,010 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating INFO level on Logger[ROOT] onto the JUL framework
+11:40:21,010 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[ROOT]
+11:40:21,010 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+11:40:21,011 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [STDOUT_CONSOLE_APPENDER] not referenced. Skipping further processing.
+11:40:21,011 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [TRACE_FILE_APPENDER]
+11:40:21,011 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:40:21,014 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@843512726 - Will use gz compression
+11:40:21,014 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@843512726 - Will use the pattern ./logs/beta/trace/archive/merchant/merchant-service-trace-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:40:21,014 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2e222612 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/trace/archive/merchant/merchant-service-trace-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:40:21,014 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2e222612 - Roll-over at the top of every hour.
+11:40:21,015 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2e222612 - Setting initial period to Fri Mar 31 11:40:21 UTC 2023
+11:40:21,015 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2e222612 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:40:21,015 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@2e222612 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:40:21,015 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[TRACE_FILE_APPENDER] - Active log file name: ./logs/beta/trace/merchant-service-trace.log
+11:40:21,015 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[TRACE_FILE_APPENDER] - File property is set to [./logs/beta/trace/merchant-service-trace.log]
+11:40:21,015 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [INTEGRATION_TRACE_FILE_APPENDER]
+11:40:21,015 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:40:21,016 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1631086936 - Will use gz compression
+11:40:21,016 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1631086936 - Will use the pattern ./logs/beta/integration/archive/merchant/merchant-service-integration-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:40:21,017 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@73ee04c8 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/integration/archive/merchant/merchant-service-integration-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:40:21,017 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@73ee04c8 - Roll-over at the top of every hour.
+11:40:21,017 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@73ee04c8 - Setting initial period to Fri Mar 31 11:40:21 UTC 2023
+11:40:21,017 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@73ee04c8 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:40:21,017 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@73ee04c8 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:40:21,017 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_TRACE_FILE_APPENDER] - Active log file name: ./logs/beta/integration/merchant-service-integration.log
+11:40:21,017 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_TRACE_FILE_APPENDER] - File property is set to [./logs/beta/integration/merchant-service-integration.log]
+11:40:21,017 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [INTEGRATION_PERFORMANCE_FILE_APPENDER]
+11:40:21,017 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:40:21,018 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1987169128 - Will use gz compression
+11:40:21,019 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1987169128 - Will use the pattern ./logs/beta/integration/archive/merchant/merchant-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:40:21,019 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@49dc7102 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/integration/archive/merchant/merchant-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:40:21,019 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@49dc7102 - Roll-over at the top of every hour.
+11:40:21,019 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@49dc7102 - Setting initial period to Fri Mar 31 11:40:21 UTC 2023
+11:40:21,019 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@49dc7102 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:40:21,019 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@49dc7102 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:40:21,019 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_PERFORMANCE_FILE_APPENDER] - Active log file name: ./logs/beta/integration/merchant-service-performance.log
+11:40:21,019 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[INTEGRATION_PERFORMANCE_FILE_APPENDER] - File property is set to [./logs/beta/integration/merchant-service-performance.log]
+11:40:21,019 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [ERROR_FILE_APPENDER]
+11:40:21,019 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:40:21,021 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1804379080 - Will use gz compression
+11:40:21,021 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1804379080 - Will use the pattern ./logs/beta/error/archive/merchant/merchant-service-error-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:40:21,021 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@68c72235 - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/error/archive/merchant/merchant-service-error-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:40:21,021 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@68c72235 - Roll-over at the top of every hour.
+11:40:21,021 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@68c72235 - Setting initial period to Fri Mar 31 11:40:21 UTC 2023
+11:40:21,021 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@68c72235 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:40:21,021 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@68c72235 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:40:21,021 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[ERROR_FILE_APPENDER] - Active log file name: ./logs/beta/error/merchant-service-error.log
+11:40:21,021 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[ERROR_FILE_APPENDER] - File property is set to [./logs/beta/error/merchant-service-error.log]
+11:40:21,022 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [PERFORMANCE_FILE_APPENDER]
+11:40:21,022 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+11:40:21,022 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@278240974 - Will use gz compression
+11:40:21,023 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@278240974 - Will use the pattern ./logs/beta/performance/archive/merchant/merchant-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log for the active file
+11:40:21,023 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a6bb9bf - The date pattern is 'yyyy-MM-dd-HH' from file name pattern './logs/beta/performance/archive/merchant/merchant-service-performance-log.%d{yyyy-MM-dd-HH}.%i.log.gz'.
+11:40:21,023 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a6bb9bf - Roll-over at the top of every hour.
+11:40:21,023 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a6bb9bf - Setting initial period to Fri Mar 31 11:40:21 UTC 2023
+11:40:21,023 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a6bb9bf - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+11:40:21,023 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a6bb9bf - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+11:40:21,023 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[PERFORMANCE_FILE_APPENDER] - Active log file name: ./logs/beta/performance/merchant-service-performance.log
+11:40:21,023 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[PERFORMANCE_FILE_APPENDER] - File property is set to [./logs/beta/performance/merchant-service-performance.log]
+11:40:21,023 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [errorLogger] to ERROR
+11:40:21,023 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating ERROR level on Logger[errorLogger] onto the JUL framework
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [errorLogger] to false
+11:40:21,025 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [ERROR_FILE_APPENDER] to Logger[errorLogger]
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [traceLogger] to TRACE
+11:40:21,025 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating TRACE level on Logger[traceLogger] onto the JUL framework
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [traceLogger] to false
+11:40:21,025 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [TRACE_FILE_APPENDER] to Logger[traceLogger]
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [performanceLogger] to TRACE
+11:40:21,025 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating TRACE level on Logger[performanceLogger] onto the JUL framework
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [performanceLogger] to false
+11:40:21,025 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [PERFORMANCE_FILE_APPENDER] to Logger[performanceLogger]
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [integrationTraceLogger] to TRACE
+11:40:21,025 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating TRACE level on Logger[integrationTraceLogger] onto the JUL framework
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [integrationTraceLogger] to false
+11:40:21,025 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [INTEGRATION_TRACE_FILE_APPENDER] to Logger[integrationTraceLogger]
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [integrationPerformanceLogger] to TRACE
+11:40:21,025 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@26275bef - Propagating TRACE level on Logger[integrationPerformanceLogger] onto the JUL framework
+11:40:21,025 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [integrationPerformanceLogger] to false
+11:40:21,025 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [INTEGRATION_PERFORMANCE_FILE_APPENDER] to Logger[integrationPerformanceLogger]
+11:40:21,026 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@34f7cfd9 - End of configuration.
+11:40:21,026 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@65f095f8 - Registering current configuration as safe fallback point
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.1)
+
+2023-03-31T11:40:21.100Z  INFO 1 --- [           main] c.b.merchant.MerchantServiceApplication  : Starting MerchantServiceApplication v1.0 using Java 17.0.2 with PID 1 (/merchant-service.jar started by root in /)
+2023-03-31T11:40:21.101Z  INFO 1 --- [           main] c.b.merchant.MerchantServiceApplication  : The following 1 profile is active: "beta"

@@ -1,0 +1,89 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: account-service
+data:
+  ACC_SERVICE_ACCOUNT_IMPL: real
+  ACC_SERVICE_DATASOURCE_PASSWORD: sheba@123
+  ACC_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.33.13.11:5432/sheba_wallet_db?currentSchema=account
+  ACC_SERVICE_DATASOURCE_USERNAME: shebawallet
+  ACC_SERVICE_FLYWAY_PASSWORD: sheba@123
+  ACC_SERVICE_FLYWAY_SCHEMA: account
+  ACC_SERVICE_FLYWAY_URL: jdbc:postgresql://10.33.13.12:5432/sheba_wallet_db
+  ACC_SERVICE_FLYWAY_USER: shebawallet
+  ACC_SERVICE_LOGGING_CONFIG: classpath:log/logback-uat.xml
+  ACC_SERVICE_PORT: '8900'
+  ACC_SERVICE_REDIS_HOST: redis-master.redis.svc.cluster.local
+  ACC_SERVICE_REDIS_MAX_CONNECTION: '10'
+  ACC_SERVICE_REDIS_MAX_IDLE_CONNECTION: '5'
+  ACC_SERVICE_REDIS_MIN_IDLE_CONNECTION: '0'
+  ACC_SERVICE_REDIS_PASSWORD: Sheba@1234
+  ACC_SERVICE_REDIS_PORT: '6379'
+  ACC_SERVICE_SLEUTH_SAM_PRO: '1.0'
+  ACC_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.cluster.local:8761/eureka
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-service
+  labels:
+    app: account-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-service
+  template:
+    metadata:
+      labels:
+        app: account-service
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret
+      containers:
+      - name: account-service
+        envFrom:
+        - configMapRef:
+            name: account-service
+        image: shebapay.azurecr.io/shebapay/account-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8900
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8900
+          initialDelaySeconds: 240
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8900
+          initialDelaySeconds: 240
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: account-service-svc
+spec:
+  selector:
+    app: account-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8900
+ 

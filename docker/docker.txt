@@ -1,0 +1,102 @@
+docker login abgpocket.azurecr.io
+
+docker build -t abgpocket.azurecr.io/pocket/account-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/account-service:1.0
+
+
+
+
+docker build -t abgpocket.azurecr.io/pocket/bank-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/bank-service:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/charge-config-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/charge-config-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/admin-gateway-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/admin-gateway-service:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/gateway-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/gateway-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/meta-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/meta-service:1.0docker 
+
+
+
+docker build -t abgpocket.azurecr.io/pocket/discovery-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/discovery-service:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/customer-auth-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/customer-auth-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/add-money-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/add-money-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/admin-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/admin-service:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/core-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/core-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/merchant-auth-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/merchant-auth-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/file-server-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/file-server-service:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/notification-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/notification-service:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/payment-service:1.0 .
+docker push abgpocket.azurecr.io/pocket/payment-service:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/customer-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/customer-service.jar:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/merchant-bulk-disbursement-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/cumerchant-bulk-disbursement-service.jar:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/merchant-charge-config-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/merchant-charge-config-service.jar:1.0
+
+
+
+docker build -t abgpocket.azurecr.io/pocket/merchant-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/merchant-service.jar:1.0
+
+
+docker build -t abgpocket.azurecr.io/pocket/send-money-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/send-money-service.jar:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/twofactor-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/twofactor-service.jar:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/send-money-to-bank-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/send-money-to-bank-service.jar:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/transaction-processing-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/transaction-processing-service.jar:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/withdraw-processing-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/withdraw-processing-service.jar:1.0
+
+docker build -t abgpocket.azurecr.io/pocket/send-money-to-bank-transaction-processing-service.jar:1.0 .
+docker push abgpocket.azurecr.io/pocket/send-money-to-bank-transaction-processing-service.jar:1.0
+
+
+
+
+
+
+
+
+FROM openjdk:17
+COPY target/*.jar account-service.jar
+ENTRYPOINT ["java", "-jar", "account-service.jar"]

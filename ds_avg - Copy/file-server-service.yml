@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: file-server-service
+data:
+  FILE_SERVER_SERVICE_DATASOURCE_PASSWORD: p0cket@ABG
+  FILE_SERVER_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=file-server
+  FILE_SERVER_SERVICE_DATASOURCE_USERNAME: pocket_uat
+  FILE_SERVER_SERVICE_IMAGE_EXPIRY_SECRET_KEY: __bs@23EE32@sb__
+  FILE_SERVER_SERVICE_IMAGE_FILE_SECRET_KEY: __bs@23FF32@sb__
+  FILE_SERVER_SERVICE_LOGGING_CONFIG: classpath:log/logback-beta.xml
+  FILE_SERVER_SERVICE_PORT: '8907'
+  FILE_SERVER_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  FILE_SERVER_SERVICE_REDIS_MAX_CONNECTION: '30'
+  FILE_SERVER_SERVICE_REDIS_MAX_IDLE_CONNECTION: '10'
+  FILE_SERVER_SERVICE_REDIS_MIN_IDLE_CONNECTION: '0'
+  FILE_SERVER_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  FILE_SERVER_SERVICE_REDIS_PORT: '6379'
+  FILE_SERVER_SERVICE_SEAWEED_MASTER_URL: http://10.11.245.12:9333
+  FILE_SERVER_SERVICE_SEAWEED_SERVICE_URL: http://10.11.245.12:5080
+  FILE_SERVER_SERVICE_SLEUTH_SAM_PRO: '1.0'
+  FILE_SERVER_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file-server-service
+  labels:
+    app: file-server-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: file-server-service
+  template:
+    metadata:
+      labels:
+        app: file-server-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: file-server-service
+        envFrom:
+        - configMapRef:
+            name: file-server-service
+        image: 10.96.233.11:8888/pocket/file-server-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8907
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8907
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8907
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: file-server-service-svc
+spec:
+  selector:
+    app: file-server-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8907
+ 

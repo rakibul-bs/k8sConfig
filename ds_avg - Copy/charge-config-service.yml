@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: charge-config-service
+data:
+  CHARGE_CONFIG_REDIS_POOL_MAX_CONNECTION: '10'
+  CHARGE_CONFIG_REDIS_POOL_MAX_IDLE_CONNECTION: '5'
+  CHARGE_CONFIG_REDIS_POOL_MIN_IDLE_CONNECTION: '0'
+  CHARGE_CONFIG_SERVICE_BD_PASSWORD: p0cket@ABG
+  CHARGE_CONFIG_SERVICE_BD_USERNAME: pocket_uat
+  CHARGE_CONFIG_SERVICE_DB_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db?currentSchema=charge-config
+  CHARGE_CONFIG_SERVICE_FLYWAY_PASSWORD: p0cket@ABG
+  CHARGE_CONFIG_SERVICE_FLYWAY_SCHEMA: charge-config
+  CHARGE_CONFIG_SERVICE_FLYWAY_URL: jdbc:postgresql://10.11.245.12:5432/wallet_db
+  CHARGE_CONFIG_SERVICE_FLYWAY_USER: pocket_uat
+  CHARGE_CONFIG_SERVICE_LOGBACK_FILE: classpath:log/logback-beta.xml
+  CHARGE_CONFIG_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  CHARGE_CONFIG_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  CHARGE_CONFIG_SERVICE_REDIS_PORT: '6379'
+  CHARGE_CONFIG_SERVICE_SERVER_PORT: '8904'
+  CHARGE_CONFIG_SERVICE_SLEUTH_SAMPLER_PROBABILITY: '1.0'
+  CHARGE_CONFIG_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: charge-config-service
+  labels:
+    app: charge-config-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: charge-config-service
+  template:
+    metadata:
+      labels:
+        app: charge-config-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: charge-config-service
+        envFrom:
+        - configMapRef:
+            name: charge-config-service
+        image: 10.96.233.11:8888/pocket/charge-config-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8904
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8904
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8904
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: charge-config-service-svc
+spec:
+  selector:
+    app: charge-config-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8904
+ 

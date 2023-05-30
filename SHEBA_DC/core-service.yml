@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: core-service
+data:
+  CORE_SERVICE_DATASOURCE_PASSWORD: sheba@123
+  CORE_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.33.13.11:5432/sheba_wallet_db?currentSchema=core
+  CORE_SERVICE_DATASOURCE_USERNAME: shebawallet
+  CORE_SERVICE_FINERACT_AUTH_TOKEN: Basic bWlmb3M6cGFzc3dvcmQ=
+  CORE_SERVICE_FINERACT_BASE_URL: http://fineract-provider-svc.default.svc.cluster.local/fineract-provider/api/v1
+  CORE_SERVICE_LOGGING_CONFIG: classpath:log/logback-uat.xml
+  CORE_SERVICE_MTB_REQUEST_HEADER_PASS: sheba@2023
+  CORE_SERVICE_MTB_REQUEST_HEADER_UNAME: shebaLBUat
+  CORE_SERVICE_MTB_SAND_BOX_BASE_URL: https://uat.mutualtrustbank.com/lbuat
+  CORE_SERVICE_MTB_CARD_BASE_URL: 172.16.229.213:743
+  CORE_SERVICE_PORICHOY_AUTH_HEADER: x-api-key
+  CORE_SERVICE_PORICHOY_AUTH_VALUE: b7a0c0d-b657-45c2-bfce-76c7e1aec2a2
+  CORE_SERVICE_PORICHOY_BASE_URL: https://api.porichoybd.com
+  CORE_SERVICE_PORT: '8905'
+  CORE_SERVICE_REDIS_HOST: redis-master.redis.svc.cluster.local
+  CORE_SERVICE_REDIS_MAX_CONNECTION: '30'
+  CORE_SERVICE_REDIS_MAX_IDLE_CONNECTION: '2'
+  CORE_SERVICE_REDIS_MIN_IDLE_CONNECTION: '0'
+  CORE_SERVICE_REDIS_PASSWORD: Sheba@1234
+  CORE_SERVICE_REDIS_PORT: '6379'
+  CORE_SERVICE_SLEUTH_SAM_PRO: '1.0'
+  CORE_SERVICE_SSL_CARD_BASE_URL: https://sandbox.sslcommerz.com
+  CORE_SERVICE_SSL_CARD_CALLBACK_URL: https://api.shebapay.xyz/api/v1/add-money/call-back/ssl/card
+  CORE_SERVICE_SSL_STORE_ID: brain63b170eaefd57
+  CORE_SERVICE_SSL_STORE_PASSWORD: brain63b170eaefd57@ssl
+  CORE_SERVICE_UCB_ADD_MONEY_BASE_URL:  http://172.16.229.216:3001
+  CORE_SERVICE_UCB_BASE_URL: http://172.25.43.15:8778
+  CORE_SERVICE_UCB_SEND_MONEY_BASE_URL: http://172.16.229.216:3011
+  CORE_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.cluster.local:8761/eureka
+
+---
+  
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-service
+  labels:
+    app: core-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: core-service
+  template:
+    metadata:
+      labels:
+        app: core-service
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret
+      containers:
+      - name: core-service
+        envFrom:
+        - configMapRef:
+            name: core-service
+        image: shebapay.azurecr.io/shebapay/core-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8905
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8905
+          initialDelaySeconds: 240
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8905
+          initialDelaySeconds: 240
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: core-service-svc
+spec:
+  selector:
+    app: core-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8905
+ 

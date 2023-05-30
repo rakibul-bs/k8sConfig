@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tfa-service 
+  namespace: mz
+data:
+  EUREKA_PORT: '8761'
+  TFA_SERVICE_DATASOURCE_PASSWORD: sheba@123
+  TFA_SERVICE_DATASOURCE_URL: jdbc:postgresql://10.34.13.11:5432/sheba_wallet_db?currentSchema=tfa
+  TFA_SERVICE_DATASOURCE_USERNAME: shebawallet
+  TFA_SERVICE_IS_OTP_DUMMY_ALLOWED: 'True'
+  TFA_SERVICE_LOGGING_CONFIG: classpath:log/logback-uat.xml
+  TFA_SERVICE_PASSWORD_STRENGTH: '4'
+  TFA_SERVICE_PORT: '8912'
+  TFA_SERVICE_REDIS_HOST: redis-master.redis.svc.cluster.local
+  TFA_SERVICE_REDIS_MAX_CONNECTION: '30'
+  TFA_SERVICE_REDIS_MAX_IDLE_CONNECTION: '10'
+  TFA_SERVICE_REDIS_MIN_IDLE_CONNECTION: '0'
+  TFA_SERVICE_REDIS_PASSWORD: Sheba@1234
+  TFA_SERVICE_REDIS_PORT: '6379'
+  TFA_SERVICE_ZONE: http://eureka-sts-0.eureka.dmz.svc.cluster.local:8761/eureka,http://eureka-sts-1.eureka.dmz.svc.cluster.local:8761/eureka,http://eureka-sts-2.eureka.dmz.svc.cluster.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tfa-service
+  namespace: mz
+  labels:
+    app: tfa-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tfa-service
+  template:
+    metadata:
+      labels:
+        app: tfa-service
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret-mz
+      containers:
+      - name:  tfa-service
+        envFrom:
+        - configMapRef:
+            name:  tfa-service
+        image: shebapay.azurecr.io/shebapay/twofactor-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8912
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8912
+          initialDelaySeconds: 180
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8912
+          initialDelaySeconds: 180
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tfa-service-svc
+  namespace: mz
+spec:
+  selector:
+    app: tfa-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8912
+ 

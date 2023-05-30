@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: send-money-to-bank-service 
+data:
+  SEND_MONEY_TO_BANK_SERVICE_DB_USERNAME: pocket_uat
+  SEND_MONEY_TO_BANK_SERVICE_ERROR_CODE: '0'
+  SEND_MONEY_TO_BANK_SERVICE_INSTANT_NOTIFICATION_EXPIRY_TIME: '30'
+  SEND_MONEY_TO_BANK_SERVICE_LOGBACK_FILE: classpath:log/logback-beta.xml
+  SEND_MONEY_TO_BANK_SERVICE_MTB_VERSION: V1.0
+  SEND_MONEY_TO_BANK_SERVICE_REDIS_HOST: redis-1678904797-master.redis.svc.uat.pocket.local
+  SEND_MONEY_TO_BANK_SERVICE_REDIS_PASSWORD: p0cket@ABG
+  SEND_MONEY_TO_BANK_SERVICE_REDIS_PORT: '6379'
+  SEND_MONEY_TO_BANK_SERVICE_SERVER_PORT: '8911'
+  SEND_MONEY_TO_BANK_SERVICE_UCB_CHANNEL: PKT
+  SEND_MONEY_TO_BANK_SERVICE_UCB_CURRENCY: BDT
+  SEND_MONEY_TO_BANK_SERVICE_UCB_DO_CODE: '555'
+  SEND_MONEY_TO_BANK_SERVICE_UCB_PASSWORD: '123456'
+  SEND_MONEY_TO_BANK_SERVICE_UCB_TNX_ID_PREFIX: WA
+  SEND_MONEY_TO_BANK_SERVICE_UCB_USERNAME: UCBPKT
+  SEND_MONEY_TO_BANK_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.uat.pocket.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: send-money-to-bank-service
+  labels:
+    app: send-money-to-bank-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: send-money-to-bank-service
+  template:
+    metadata:
+      labels:
+        app: send-money-to-bank-service
+    spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
+      containers:
+      - name: send-money-to-bank-service
+        envFrom:
+        - configMapRef:
+            name:  send-money-to-bank-service
+        image: 10.96.233.11:8888/pocket/send-money-to-bank-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8911
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8911
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8911
+          initialDelaySeconds: 120
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: send-money-to-bank-service-svc
+spec:
+  selector:
+    app: send-money-to-bank-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8911
+ 

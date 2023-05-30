@@ -1,0 +1,107 @@
+docker login shebapay.azurecr.io
+
+
+docker build -t shebapay.azurecr.io/shebapay/fineract-provider:1.0 .
+docker push shebapay.azurecr.io/shebapay/fineract-provider:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/account-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/account-service:1.0
+
+
+
+
+docker build -t shebapay.azurecr.io/shebapay/bank-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/bank-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/charge-config-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/charge-config-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/admin-gateway-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/admin-gateway-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/gateway-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/gateway-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/meta-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/meta-service:1.0
+
+
+
+docker build -t shebapay.azurecr.io/shebapay/discovery-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/discovery-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/customer-auth-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/customer-auth-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/add-money-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/add-money-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/admin-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/admin-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/core-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/core-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/merchant-auth-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/merchant-auth-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/file-server-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/file-server-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/notification-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/notification-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/payment-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/payment-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/customer-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/customer-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/merchant-bulk-disbursement-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/cumerchant-bulk-disbursement-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/merchant-charge-config-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/merchant-charge-config-service:1.0
+
+
+
+docker build -t shebapay.azurecr.io/shebapay/merchant-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/merchant-service:1.0
+
+
+docker build -t shebapay.azurecr.io/shebapay/send-money-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/send-money-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/twofactor-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/twofactor-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/send-money-to-bank-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/send-money-to-bank-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/transaction-processing-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/transaction-processing-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/withdraw-processing-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/withdraw-processing-service:1.0
+
+docker build -t shebapay.azurecr.io/shebapay/send-money-to-bank-transaction-processing-service:1.0 .
+docker push shebapay.azurecr.io/shebapay/send-money-to-bank-transaction-processing-service:1.0
+
+
+
+
+
+
+
+
+FROM openjdk:17
+COPY target/* account-service
+ENTRYPOINT ["java", "-jar", "account-service"]

@@ -1,0 +1,92 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: merchant-service
+data:
+  MERCHANT_APP_BASE_URL: localhost:8081
+  MERCHANT_REDIS_POOL_MAX_CONNECTION: '30'
+  MERCHANT_REDIS_POOL_MAX_IDLE_CONNECTION: '10'
+  MERCHANT_REDIS_POOL_MIN_IDLE_CONNECTION: '0'
+  MERCHANT_SERVICE_CONSECUTIVE_DIGIT: '012345678900001111222233334444555566667777888889999000'
+  MERCHANT_SERVICE_DB_PASSWORD: sheba@123
+  MERCHANT_SERVICE_DB_URL: jdbc:postgresql://10.33.13.11:5432/sheba_wallet_db?currentSchema=merchant
+  MERCHANT_SERVICE_DB_USERNAME: shebawallet
+  MERCHANT_SERVICE_IMAGE_EXPIRY_SECRET_KEY: __bs@23EE32@sb__
+  MERCHANT_SERVICE_IMAGE_EXPIRY_SECRET_MINUTE: '2'
+  MERCHANT_SERVICE_INSTANT_NOTIFICATION_EXPIRY_MINUTE: '5'
+  MERCHANT_SERVICE_LOGBACK_FILE: classpath:log/logback-uat.xml
+  MERCHANT_SERVICE_OTP_EXPIRY_MINUTE: '2'
+  MERCHANT_SERVICE_PASSWORD_STRENTH: '4'
+  MERCHANT_SERVICE_PASSWORD_VALIDITY_MINUTE: '30'
+  MERCHANT_SERVICE_PASSWORD_lENGTH: '4'
+  MERCHANT_SERVICE_REDIS_HOST: redis-master.redis.svc.cluster.local
+  MERCHANT_SERVICE_REDIS_PASSWORD: Sheba@1234
+  MERCHANT_SERVICE_REDIS_PORT: '6379'
+  MERCHANT_SERVICE_SERVER_PORT: '8908'
+  MERCHANT_SERVICE_WALLET_GATEWAY_URL: https://api.shebapay.xyz
+  MERCHANT_SERVICE_ZONE: http://eureka-sts-0.eureka.default.svc.cluster.local:8761/eureka
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: merchant-service
+  labels:
+    app: merchant-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: merchant-service
+  template:
+    metadata:
+      labels:
+        app: merchant-service
+    spec:
+      imagePullSecrets:
+      - name: azure-registry-secret
+      containers:
+      - name: merchant-service
+        envFrom:
+        - configMapRef:
+            name: merchant-service
+        image: shebapay.azurecr.io/shebapay/merchant-service:1.0
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8908
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8908
+          initialDelaySeconds: 240
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8908
+          initialDelaySeconds: 240
+          periodSeconds: 3
+
+
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: merchant-service-svc
+spec:
+  selector:
+    app: merchant-service
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8908
+ 
