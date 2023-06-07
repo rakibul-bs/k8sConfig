@@ -33,7 +33,7 @@ data:
   CORE_SERVICE_UCB_BASE_URL: http://172.25.43.15:8778
   CORE_SERVICE_UCB_SEND_MONEY_BASE_URL: http://172.16.229.216:3011
   CORE_SERVICE_ZONE: http://eureka-sts-0.eureka.dmz.svc.cluster.local:8761/eureka,http://eureka-sts-1.eureka.dmz.svc.cluster.local:8761/eureka,http://eureka-sts-2.eureka.dmz.svc.cluster.local:8761/eureka
-
+  CORE_SERVICE_FINERACT_TENANT_ID: sheba_pay
 ---
   
 

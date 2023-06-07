@@ -95,6 +95,9 @@ docker push shebapay.azurecr.io/shebapay/withdraw-processing-service:1.0
 docker build -t shebapay.azurecr.io/shebapay/send-money-to-bank-transaction-processing-service:1.0 .
 docker push shebapay.azurecr.io/shebapay/send-money-to-bank-transaction-processing-service:1.0
 
+docker build -t  shebapay.azurecr.io/shebapay/sheba-admin-prod:1.0 .
+docker push  shebapay.azurecr.io/shebapay/sheba-admin-prod:1.0
+
 
 
 
